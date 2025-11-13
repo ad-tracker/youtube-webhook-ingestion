@@ -5,7 +5,7 @@ A production-ready Spring Boot 4.0.0 microservice for receiving and processing Y
 ## Features
 
 - **Modern Stack**: Spring Boot 4.0.0-RC1 with Java 25
-- **Virtual Threads**: Leverages Java 21+ virtual threads for improved scalability
+- **Virtual Threads**: Leverages Java 25 virtual threads for improved scalability
 - **Event Streaming**: RabbitMQ integration for async event processing
 - **Persistence**: PostgreSQL with JPA/Hibernate
 - **Security**: Spring Security with configurable authentication
@@ -16,7 +16,7 @@ A production-ready Spring Boot 4.0.0 microservice for receiving and processing Y
 ## Technology Stack
 
 - **Framework**: Spring Boot 4.0.0-RC1
-- **Language**: Java 21 (LTS with virtual threads support)
+- **Language**: Java 25 (LTS with virtual threads support)
 - **Build Tool**: Gradle 8.11.1
 - **Database**: PostgreSQL 16
 - **Message Queue**: RabbitMQ 3.13
@@ -60,7 +60,7 @@ A production-ready Spring Boot 4.0.0 microservice for receiving and processing Y
 
 ## Prerequisites
 
-- **Java 21** (JDK with virtual threads support)
+- **Java 25** (JDK with virtual threads support)
 - **Docker** (for containerized deployment)
 - **PostgreSQL 16+** (for local development)
 - **RabbitMQ 3.13+** (for local development)
@@ -417,4 +417,4 @@ For questions or support, please contact the development team or open an issue o
 
 ---
 
-**Built with Spring Boot 4.0.0 and Java 21 LTS**
+**Built with Spring Boot 4.0.0 and Java 25 LTS**
