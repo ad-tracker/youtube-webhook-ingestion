@@ -17,7 +17,7 @@ A production-ready Spring Boot 4.0.0 microservice for receiving and processing Y
 
 - **Framework**: Spring Boot 4.0.0-RC1
 - **Language**: Java 25 (LTS with virtual threads support)
-- **Build Tool**: Gradle 8.11.1
+- **Build Tool**: Gradle 8.14
 - **Database**: PostgreSQL 16
 - **Message Queue**: RabbitMQ 3.13
 - **Containerization**: Docker with multi-stage builds
