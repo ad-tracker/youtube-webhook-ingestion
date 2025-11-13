@@ -34,9 +34,10 @@ public class WebhookValidationService {
             return;
         }
 
+        validateNotNull(payload);
+
         log.debug("Validating webhook payload for video: {}", payload.getVideoId());
 
-        validateNotNull(payload);
         validateVideoId(payload.getVideoId());
         validateChannelId(payload.getChannelId());
         validateEventType(payload.getEventType());
