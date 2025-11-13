@@ -24,7 +24,7 @@ RUN ./gradlew clean build -x test --no-daemon
 # Extract JAR layers for better caching
 RUN mkdir -p build/dependency && \
     cd build/dependency && \
-    java -Djarmode=tools -jar ../libs/*.jar extract --layers --destination .
+    java -Djarmode=layertools -jar ../libs/youtube-webhook-ingestion-0.0.1-SNAPSHOT.jar extract --destination .
 
 # Stage 2: Create the runtime image
 FROM eclipse-temurin:25-jre-alpine
