@@ -1,5 +1,6 @@
 package com.adtracker.webhookingest.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -60,10 +61,11 @@ public class RabbitMQConfig {
 
     /**
      * Configure JSON message converter for RabbitMQ messages.
+     * Uses ObjectMapper to avoid deprecated constructor.
      */
     @Bean
-    public MessageConverter messageConverter() {
-        return new Jackson2JsonMessageConverter();
+    public MessageConverter messageConverter(ObjectMapper objectMapper) {
+        return new Jackson2JsonMessageConverter(objectMapper);
     }
 
     /**

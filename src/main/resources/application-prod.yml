@@ -1,6 +1,7 @@
 spring:
   datasource:
     hikari:
+      schema: webhook_ingestion
       maximum-pool-size: 20
       minimum-idle: 10
       leak-detection-threshold: 60000
@@ -9,6 +10,7 @@ spring:
     show-sql: false
     properties:
       hibernate:
+        default_schema: webhook_ingestion
         format_sql: false
         generate_statistics: false
 

@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '4.0.0-RC1'
+    id 'org.springframework.boot' version '4.0.0-RC2'
     id 'io.spring.dependency-management' version '1.1.6'
     id 'jacoco'
 }
@@ -10,7 +10,7 @@ version = '0.0.1-SNAPSHOT'
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
 
@@ -34,6 +34,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 
+    // JSON Processing
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+
     // Database
     runtimeOnly 'org.postgresql:postgresql'
 
@@ -47,6 +51,9 @@ dependencies {
 
     // Testing
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-test'
+    testImplementation 'org.springframework.boot:spring-boot-test-autoconfigure'
+    testImplementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.amqp:spring-rabbit-test'
     testImplementation 'org.springframework.security:spring-security-test'
     testImplementation 'org.testcontainers:testcontainers:1.20.4'
@@ -63,7 +70,7 @@ tasks.named('test') {
 }
 
 jacoco {
-    toolVersion = "0.8.12"
+    toolVersion = "0.8.13"
 }
 
 jacocoTestReport {
