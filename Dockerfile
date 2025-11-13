@@ -1,5 +1,5 @@
 # Multi-stage Dockerfile for YouTube Webhook Ingestion Service
-# Built with Spring Boot 4.0.0 and Java 25
+# Built with Spring Boot 4.0.0-RC2 and Java 25
 
 # Stage 1: Build the application
 FROM eclipse-temurin:25-jdk-alpine AS builder
