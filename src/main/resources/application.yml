@@ -26,6 +26,13 @@ spring:
     show-sql: false
     open-in-view: false
 
+  flyway:
+    enabled: true
+    schemas: webhook_ingestion
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    validate-on-migrate: true
+
   rabbitmq:
     host: ${RABBITMQ_HOST:localhost}
     port: ${RABBITMQ_PORT:5672}
