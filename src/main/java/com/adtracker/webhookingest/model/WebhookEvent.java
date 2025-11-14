@@ -15,7 +15,7 @@ import java.util.UUID;
  * and potential replay scenarios.
  */
 @Entity
-@Table(name = "webhook_events")
+@Table(name = "webhook_events", schema = "webhook_ingestion")
 @Getter
 @Setter
 @NoArgsConstructor
