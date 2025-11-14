@@ -99,8 +99,8 @@ CREATE TABLE webhook_ingestion.subscriptions (
     -- Ensure only one subscription per channel
     CONSTRAINT uq_subscriptions_channel_id UNIQUE (channel_id),
 
-    -- Validate subscription status values
-    CONSTRAINT chk_subscription_status CHECK (subscription_status IN ('active', 'pending', 'expired', 'failed'))
+    -- Validate subscription status values (uppercase to match Java enum)
+    CONSTRAINT chk_subscription_status CHECK (subscription_status IN ('ACTIVE', 'PENDING', 'EXPIRED', 'FAILED'))
 );
 
 -- Performance indexes for subscription management queries
@@ -112,7 +112,7 @@ CREATE INDEX idx_subscriptions_lease_expires ON webhook_ingestion.subscriptions(
 -- Add table comments for documentation
 COMMENT ON TABLE webhook_ingestion.subscriptions IS 'Tracks YouTube channel subscriptions and manages PubSubHubbub lease renewals';
 COMMENT ON COLUMN webhook_ingestion.subscriptions.id IS 'UUIDv7 primary key with embedded timestamp for optimal indexing';
-COMMENT ON COLUMN webhook_ingestion.subscriptions.subscription_status IS 'Current status: active, pending, expired, or failed';
+COMMENT ON COLUMN webhook_ingestion.subscriptions.subscription_status IS 'Current status: ACTIVE, PENDING, EXPIRED, or FAILED';
 COMMENT ON COLUMN webhook_ingestion.subscriptions.lease_seconds IS 'Lease duration in seconds as confirmed by hub';
 COMMENT ON COLUMN webhook_ingestion.subscriptions.lease_expires_at IS 'When the current lease expires';
 COMMENT ON COLUMN webhook_ingestion.subscriptions.next_renewal_at IS 'When to attempt next renewal (before expiration)';
